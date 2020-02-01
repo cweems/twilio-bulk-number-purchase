@@ -15,9 +15,13 @@ Replace env vars in .env with Twilio Account credentials.
 ## Usage
 
 Bulk Buy Phone Numbers:
+
 `node buyNumbers.js [AREA CODE] [QUANTITY]`
+
 Example:`node buyNumbers.js 413 20`
 
 Bulk Update Phone Numbers:
+
 `node bulkUpdateNumbers.js [WEBHOOK URL]`
+
 `node bulkUpdateNumbers.js https://webhooks.twilio.com/v1/Accounts/ACXXXXXXXXXXX/Flows/FWXXXXXXXXXXX`
