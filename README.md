@@ -3,8 +3,11 @@
 ## Setup
 
 Clone repository: `git clone git@github.com:cweems/twilio-bulk-number-purchase.git`
+
 Change to folder: `cd twilio-bulk-number-purchase`
+
 Install dependencies: `npm install`
+
 Copy env file example to .env: `cp .env.example .env`
 
 Replace env vars in .env with Twilio Account credentials.
