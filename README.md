@@ -1,27 +1,55 @@
 # Bulk Number Purchase and Update
 
+Simple helper scripts for buying and bulk updating Twilio Phone Numbers. Features include:
+
+-   Specify an area code and quantity of phone numbers to purchase.
+-   Specify a URL and webhook type (SMS or Voice) to bulk-update.
+
+For more details on how to implement custom API calls, see the [Twilio Phone Numbers API](https://www.twilio.com/docs/phone-numbers).
+
 ## Setup
 
-Clone repository: `git clone git@github.com:cweems/twilio-bulk-number-purchase.git`
+Run the following shell commands to set up the script:
 
-Change to folder: `cd twilio-bulk-number-purchase`
+```shell
+$ git clone git@github.com:cweems/twilio-bulk-number-purchase.git
+$ cd twilio-bulk-number-purchase
+$ npm install
+$ cp .env.example .env
+```
 
-Install dependencies: `npm install`
-
-Copy env file example to .env: `cp .env.example .env`
-
-Replace env vars in .env with Twilio Account credentials.
+Then, replace env vars in .env with Twilio Account credentials.
 
 ## Usage
 
-Bulk Buy Phone Numbers:
+There are three node.js scripts available in this respository:
 
-`node buyNumbers.js [AREA CODE] [QUANTITY]`
+### buyNumbers.js
 
-Example:`node buyNumbers.js 413 20`
+Buy multiple Twilio Phone Numbers at once:
+
+```shell
+$ node buyNumbers.js [AREA CODE] [QUANTITY]
+
+# Example:
+$ node buyNumbers.js 413 20
+```
+
+### bulkUpdateNumbers.js
 
 Bulk Update Phone Numbers:
 
-`node bulkUpdateNumbers.js [WEBHOOK URL]`
+```shell
+$ node bulkUpdateNumbers.js [WEBHOOK URL] [WEBHOOK TYPE (smsUrl / voiceUrl)]
 
-`node bulkUpdateNumbers.js https://webhooks.twilio.com/v1/Accounts/ACXXXXXXXXXXX/Flows/FWXXXXXXXXXXX`
+# Example:
+$ node bulkUpdateNumbers.js https://webhooks.twilio.com/v1/Accounts/ACXXXXXXXXXXX/Flows/FWXXXXXXXXXXX smsUrl
+```
+
+### listNumbers.js
+
+List all active phone numbers present in your Twilio Account.
+
+```shell
+$ node listNumbers.js
+```
